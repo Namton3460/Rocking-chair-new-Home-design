@@ -267,10 +267,12 @@ export default function App() {
             Amenities
           </span>
           <p
-            className="font-playfair text-[#1a202c]/65 leading-relaxed italic mx-auto max-w-[28rem]"
+            className="font-playfair text-[#1a202c]/65 leading-relaxed italic mx-auto text-center max-w-2xl lg:translate-x-15"
             style={{ fontSize: "clamp(1rem, 4vw, 1.5rem)" }}
           >
-            Curated comforts designed to make every moment of your stay effortless and truly unforgettable.
+            <span className="block">Curated comforts designed to make every</span>
+            <span className="block">moment of your stay effortless and truly</span>
+            <span className="block">unforgettable.</span>
           </p>
 
           {/* Icons centered directly after description */}
@@ -286,7 +288,7 @@ export default function App() {
                 { icon: Droplets, title: "Private Pool", desc: "Crystal-clear infinity pool with sun loungers" },
                 { icon: Wifi, title: "High-Speed WiFi", desc: "Seamless connectivity throughout" },
                 { icon: Sparkles, title: "Housekeeping", desc: "Daily service to keep your villa pristine" },
-                { icon: ShieldCheck, title: "24/7 Security", desc: "Round-the-clock peace of mind" },
+                { icon: ShieldCheck, title: "Security", desc: "Realtime CCTV detecting " },
                 { icon: Car, title: "Airport Transfer", desc: "Complimentary luxury pickup & drop-off" },
               ].map((item, idx) => (
                 <div
@@ -316,7 +318,7 @@ export default function App() {
             </div>
 
             {/* Expandable Description */}
-            <div className="min-h-24 mt-6 md:mt-8 flex justify-center items-center w-full max-w-[800px] mx-auto rounded-[1.25rem] border border-[#e2d8ce]/40 bg-white/30 px-5 py-6 md:border-0 md:bg-transparent md:px-4 md:py-0">
+            <div className="min-h-28 mt-8 md:mt-12 flex flex-col justify-center items-center w-full max-w-[800px] mx-auto rounded-[1.25rem] border border-[#e2d8ce]/40 bg-white/30 px-6 py-8 md:border-0 md:bg-transparent md:p-0">
               <AnimatePresence mode="wait">
                 {activeAmenity !== null && (
                   <motion.div
@@ -325,7 +327,7 @@ export default function App() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.3 }}
-                    className="text-center"
+                    className="text-center w-full"
                   >
                     <h4 className="font-playfair text-[#8c6d53] text-xl md:text-2xl font-semibold mb-2">
                       {[
@@ -336,7 +338,7 @@ export default function App() {
                         "Airport Transfer"
                       ][activeAmenity]}
                     </h4>
-                    <p className="text-[#1a202c]/70 text-sm md:text-base font-light italic">
+                    <p className="text-[#1a202c]/70 text-sm md:text-base font-light italic text-center">
                       {[
                         "Crystal-clear infinity pool with sun loungers",
                         "Seamless connectivity throughout the villa",
