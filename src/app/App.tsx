@@ -125,8 +125,8 @@ export default function App() {
             className="absolute w-full h-full object-cover object-[52%_center] sm:object-center"
           />
           {/* Silk-like Gradient Overlay for Text Readability and Transition */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1a202c] via-[#1a202c]/40 to-[#1a202c]/30 z-10" />
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#f7f5f0] to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1a202c]/50 via-transparent to-transparent z-10" />
+          <div className="absolute inset-x-0 bottom-0 h-[45svh] md:h-64 bg-gradient-to-t from-[#f7f5f0] via-[#f7f5f0]/40 to-transparent z-10" />
         </motion.div>
 
         <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden">
