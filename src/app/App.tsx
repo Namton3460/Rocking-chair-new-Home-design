@@ -316,7 +316,7 @@ export default function App() {
             </div>
 
             {/* Expandable Description */}
-            <div className="min-h-24 mt-6 md:mt-8 flex justify-center items-center w-full max-w-2xl rounded-[1.25rem] border border-[#e2d8ce]/40 bg-white/30 px-5 py-6 md:border-0 md:bg-transparent md:px-4 md:py-0">
+            <div className="min-h-24 mt-6 md:mt-8 flex justify-center items-center w-full max-w-[800px] mx-auto rounded-[1.25rem] border border-[#e2d8ce]/40 bg-white/30 px-5 py-6 md:border-0 md:bg-transparent md:px-4 md:py-0">
               <AnimatePresence mode="wait">
                 {activeAmenity !== null && (
                   <motion.div
