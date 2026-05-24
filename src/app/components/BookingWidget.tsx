@@ -24,7 +24,7 @@ export function BookingWidget({ onClose, pricePerNight }: BookingWidgetProps) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="w-full bg-[#fdfcfb] rounded-[clamp(1.5rem,3vw,2.5rem)] shadow-[0_20px_60px_-15px_rgba(140,109,83,0.15)] border border-[#e2d8ce]/40 overflow-hidden origin-top"
+      className="w-full bg-[#fdfcfb] rounded-[clamp(1.25rem,3vw,2.5rem)] shadow-[0_20px_60px_-15px_rgba(140,109,83,0.15)] border border-[#e2d8ce]/40 overflow-hidden origin-top"
     >
       {/* Header Section */}
       <div className="relative border-b border-[#e2d8ce]/30"
@@ -54,14 +54,14 @@ export function BookingWidget({ onClose, pricePerNight }: BookingWidgetProps) {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row">
+      <div className="flex flex-col xl:flex-row">
         {/* Left Side: Calendar */}
-        <div className="flex-1 border-b lg:border-b-0 lg:border-r border-[#e2d8ce]/30"
+        <div className="flex-1 border-b xl:border-b-0 xl:border-r border-[#e2d8ce]/30"
           style={{ padding: "clamp(1.5rem, 5vw, 3rem) clamp(1.5rem, 6vw, 4rem)" }}>
-          <div className="flex items-center justify-between mb-[clamp(2rem,5vw,3rem)]">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-[clamp(1.5rem,5vw,3rem)]">
             <h4 className="font-semibold text-[#1a202c] tracking-widest uppercase"
               style={{ fontSize: "clamp(0.75rem, 1.5vw, 0.85rem)" }}>Select Check-in</h4>
-            <div className="flex items-center gap-[clamp(1rem,3vw,2rem)]">
+            <div className="flex items-center justify-between gap-[clamp(0.8rem,3vw,2rem)]">
               <button className="p-1 text-[#8c6d53]/40 hover:text-[#8c6d53] transition-colors">
                 <ChevronLeft size={22} strokeWidth={1.5} />
               </button>
@@ -133,7 +133,7 @@ export function BookingWidget({ onClose, pricePerNight }: BookingWidgetProps) {
         </div>
 
         {/* Right Side: Summary */}
-        <div className="w-full lg:w-[clamp(20rem,35vw,28rem)] bg-[#f7f5f0]/40 flex flex-col justify-between"
+        <div className="w-full xl:w-[clamp(20rem,35vw,28rem)] bg-[#f7f5f0]/40 flex flex-col justify-between"
           style={{ padding: "clamp(1.5rem, 5vw, 3rem) clamp(1.5rem, 6vw, 4rem)" }}>
           <div className="space-y-[clamp(2rem,5vw,3rem)]">
             <div>

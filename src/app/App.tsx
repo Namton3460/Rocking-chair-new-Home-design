@@ -111,7 +111,7 @@ export default function App() {
   return (
     <div className="relative w-full bg-[#f7f5f0] font-inter text-stone-50 overflow-x-hidden">
       {/* Hero Section Container (100vh) */}
-      <div className="relative w-full h-screen min-h-[700px] sm:min-h-[800px] overflow-hidden bg-[#1a202c]">
+      <div className="relative w-full h-[100svh] min-h-[560px] sm:min-h-[800px] overflow-hidden bg-[#1a202c]">
         {/* Background Image & Overlays */}
         <motion.div
           initial={{ scale: 1.05, opacity: 0 }}
@@ -122,7 +122,7 @@ export default function App() {
           <ImageWithFallback
             src="https://huktvoldmkiahhyrvwqn.supabase.co/storage/v1/object/public/villa-images/villa%201%20front.jpg"
             alt="Rocking Chair Pool Villa"
-            className="absolute w-full h-full object-cover"
+            className="absolute w-full h-full object-cover object-[52%_center] sm:object-center"
           />
           {/* Silk-like Gradient Overlay for Text Readability and Transition */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#1a202c] via-[#1a202c]/40 to-[#1a202c]/30 z-10" />
@@ -160,7 +160,7 @@ export default function App() {
       </div>
 
       {/* The Concept Section */}
-      <section id="concept" className="relative z-20 isolate w-full min-h-screen sm:min-h-[800px] flex flex-col justify-start py-20 lg:py-24 overflow-x-clip overflow-y-visible">
+      <section id="concept" className="relative z-20 isolate w-full min-h-0 md:min-h-screen sm:min-h-[800px] flex flex-col justify-start py-[clamp(4.5rem,14vw,7rem)] md:py-20 lg:py-24 overflow-x-clip overflow-y-visible">
 
         {/* Split Background */}
         <div className="absolute inset-0 flex flex-col md:flex-row pointer-events-none z-0">
@@ -173,7 +173,7 @@ export default function App() {
         {/* Subtle decorative elements */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#e2d8ce]/20 rounded-full blur-[120px] pointer-events-none z-[1]" />
 
-        <div className="relative z-10 w-[90%] lg:w-[85%] max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-24 xl:gap-32 md:h-[80vh]">
+        <div className="relative z-10 w-[88%] lg:w-[85%] max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-24 xl:gap-32 md:h-[80vh]">
 
           {/* Left: Text Content (Split into 3 distinct parts) */}
           <motion.div
@@ -181,12 +181,12 @@ export default function App() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full md:w-1/2 flex flex-col justify-center min-h-[200px] md:min-h-full text-left z-10 py-8 md:py-12"
+            className="w-full md:w-1/2 flex flex-col justify-center min-h-[200px] md:min-h-full text-center md:text-left z-10 py-4 md:py-12"
           >
             {/* Part 1: Title */}
             <div className="flex flex-col gap-4">
-              <div className="h-[1px] w-12 sm:w-16 bg-[#8c6d53]/60"></div>
-              <h2 className="font-playfair text-[#1a202c] tracking-[0.06em] uppercase leading-[0.95] md:whitespace-nowrap pr-6"
+              <div className="h-[1px] w-12 sm:w-16 bg-[#8c6d53]/60 mx-auto md:mx-0"></div>
+              <h2 className="font-playfair text-[#1a202c] tracking-[0.06em] uppercase leading-[0.95] md:whitespace-nowrap pr-0 md:pr-6"
                 style={{ fontSize: "clamp(2rem, 5vw + 1rem, 4rem)" }}>
                 Where nature meets
                 <span className="italic text-[#8c6d53] lowercase font-light tracking-normal block sm:inline"> simplicity</span>
@@ -196,12 +196,12 @@ export default function App() {
             <div className="h-3 md:h-4 lg:h-10" />
 
             {/* Part 2 & 3: Highlight + Description stack */}
-            <div className="mt-16 md:mt-20 text-[#1a202c]/75">
+            <div className="mt-8 md:mt-20 text-[#1a202c]/75">
               <div className="flex flex-col gap-5">
-                <p className="text-[#8c6d53] text-lg sm:text-xl font-medium border-l-2 border-[#8c6d53]/30 pl-6 py-2 italic leading-relaxed max-w-[90%]">
+                <p className="text-left text-[#8c6d53] text-base sm:text-xl font-medium border-l-2 border-[#8c6d53]/30 pl-5 sm:pl-6 py-2 italic leading-relaxed max-w-full md:max-w-[90%]">
                   Rocking Chair Pool Villa is designed around a single idea that true luxury is found in simplicity.
                 </p>
-                <div className="text-base sm:text-lg font-light leading-[1.9] tracking-widest space-y-6 max-w-lg">
+                <div className="text-left text-sm sm:text-lg font-light leading-[1.85] tracking-wide sm:tracking-widest space-y-5 md:space-y-6 max-w-none md:max-w-lg">
                   <p className="leading-relaxed">
                     Nestled in Koh Samui's lush hillside, every space blends open-air living with serene natural beauty.
                   </p>
@@ -219,7 +219,7 @@ export default function App() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            className="w-full md:w-1/2 flex justify-center md:justify-end md:absolute md:-right-[20%] md:-bottom-[35vh] md:w-[50vw] md:h-[120%] z-20 mt-16 md:mt-0 pointer-events-none"
+            className="w-full md:w-1/2 flex justify-center md:justify-end md:absolute md:-right-[20%] md:-bottom-[35vh] md:w-[50vw] md:h-[120%] z-20 mt-8 md:mt-0 pointer-events-none"
           >
             <div className="w-full h-full md:translate-y-[22vh]">
               {/* The rocking animation wrapper */}
@@ -233,7 +233,7 @@ export default function App() {
                 <img
                   src="https://huktvoldmkiahhyrvwqn.supabase.co/storage/v1/object/public/villa-images/chair%202%20no%20bg.png"
                   alt="Rocking Chair"
-                  className="w-full h-auto md:h-full object-contain object-bottom md:object-right-bottom drop-shadow-2xl scale-125 origin-bottom-right"
+                  className="mx-auto w-[82%] max-w-[320px] h-auto md:w-full md:max-w-none md:h-full object-contain object-bottom md:object-right-bottom drop-shadow-2xl scale-110 md:scale-125 origin-bottom md:origin-bottom-right"
                   onError={(e) => {
                     // Fallback if image doesn't exist yet
                     (e.target as HTMLImageElement).src = "https://huktvoldmkiahhyrvwqn.supabase.co/storage/v1/object/public/villa-images/final11.png";
@@ -248,37 +248,38 @@ export default function App() {
 
       <section
         id="amenities"
-        className="relative w-full flex flex-col items-center justify-center bg-[#f7f5f0] overflow-hidden px-[clamp(1.5rem,5vw,4rem)]"
+        className="relative w-full flex flex-col items-center justify-center bg-[#f7f5f0] overflow-hidden px-[clamp(1.25rem,5vw,4rem)]"
         style={{
-          paddingTop: "clamp(4rem, 10vw, 8rem)",
-          paddingBottom: "clamp(3rem, 7vw, 6rem)"
+          paddingTop: "clamp(3.75rem, 10vw, 8rem)",
+          paddingBottom: "clamp(3.5rem, 8vw, 6rem)"
         }}
       >
         <div
-          className="flex flex-col gap-12 text-center z-10"
+          className="flex flex-col gap-8 md:gap-12 text-center z-10"
           style={{
-            maxWidth: "clamp(300px, 80vw, 800px)"
+            maxWidth: "clamp(300px, 88vw, 800px)"
           }}
         >
           <span
             className="font-playfair text-[#8c6d53] font-semibold tracking-[0.25em] uppercase"
-            style={{ fontSize: "clamp(2rem, 5vw + 1rem, 4rem)" }}
+            style={{ fontSize: "clamp(2.25rem, 9vw, 4rem)" }}
           >
             Amenities
           </span>
           <p
-            className="font-playfair text-[#1a202c]/65 leading-relaxed italic mt-12 mx-auto gap-12"
-            style={{ fontSize: "clamp(1rem, 2.5vw, 1.5rem)" }}
+            className="font-playfair text-[#1a202c]/65 leading-relaxed italic mx-auto max-w-[28rem]"
+            style={{ fontSize: "clamp(1rem, 4vw, 1.5rem)" }}
           >
             Curated comforts designed to make every moment of your stay effortless and truly unforgettable.
           </p>
 
           {/* Icons centered directly after description */}
-          <div className="flex flex-col items-center mt-8 md:mt-20 w-full">
+          <div className="flex flex-col items-center mt-4 md:mt-20 w-full">
             <div
-              className="flex flex-row flex-wrap justify-center"
+              className="grid w-full grid-cols-2 gap-4 sm:grid-cols-3 md:flex md:flex-row md:flex-wrap md:justify-center"
               style={{
-                gap: "clamp(1.5rem, 3vw, 4rem)"
+                columnGap: "clamp(1rem, 3vw, 4rem)",
+                rowGap: "clamp(1rem, 3vw, 2rem)"
               }}
             >
               {[
@@ -290,7 +291,7 @@ export default function App() {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex flex-col items-center group"
+                  className={`flex flex-col items-center group ${idx === 4 ? "col-span-2 sm:col-span-1" : ""}`}
                   onMouseEnter={() => setActiveAmenity(idx)}
                   onMouseLeave={() => setActiveAmenity(null)}
                   onClick={() => setActiveAmenity(activeAmenity === idx ? null : idx)}
@@ -300,19 +301,22 @@ export default function App() {
                       scale: activeAmenity === idx ? 1.2 : 1,
                       color: activeAmenity === idx ? "#8c6d53" : "#d4bca3"
                     }}
-                    className="cursor-pointer transition-colors duration-300"
+                    className="flex min-h-[7.25rem] w-full cursor-pointer flex-col items-center justify-center gap-3 rounded-[1.25rem] border border-[#e2d8ce]/50 bg-white/35 px-4 py-5 shadow-sm shadow-[#8c6d53]/5 transition-colors duration-300 md:min-h-0 md:w-auto md:border-0 md:bg-transparent md:p-0 md:shadow-none"
                   >
                     <item.icon
-                      style={{ width: "clamp(4rem, 6vw, 8rem)", height: "clamp(4rem, 6vw, 8rem)" }}
+                      style={{ width: "clamp(2.7rem, 11vw, 8rem)", height: "clamp(2.7rem, 11vw, 8rem)" }}
                       strokeWidth={0.8}
                     />
+                    <span className="text-center text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#1a202c]/45 md:hidden">
+                      {item.title}
+                    </span>
                   </motion.div>
                 </div>
               ))}
             </div>
 
             {/* Expandable Description */}
-            <div className="h-24 mt-8 flex justify-center items-center w-full max-w-2xl px-4">
+            <div className="min-h-24 mt-6 md:mt-8 flex justify-center items-center w-full max-w-2xl rounded-[1.25rem] border border-[#e2d8ce]/40 bg-white/30 px-5 py-6 md:border-0 md:bg-transparent md:px-4 md:py-0">
               <AnimatePresence mode="wait">
                 {activeAmenity !== null && (
                   <motion.div
@@ -343,6 +347,18 @@ export default function App() {
                     </p>
                   </motion.div>
                 )}
+                {activeAmenity === null && (
+                  <motion.p
+                    key="amenity-hint"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-center text-sm font-light italic leading-relaxed text-[#1a202c]/45 md:text-base"
+                  >
+                    Tap an amenity to explore the details prepared for your stay.
+                  </motion.p>
+                )}
               </AnimatePresence>
             </div>
           </div>
@@ -351,11 +367,11 @@ export default function App() {
 
       {/* Testimonial Section */}
       <section
-        className="relative w-full min-h-screen flex flex-col justify-center items-center overflow-hidden px-[clamp(1.5rem,5vw,4rem)]"
+        className="relative w-full min-h-0 md:min-h-screen flex flex-col justify-center items-center overflow-hidden px-[clamp(1.25rem,5vw,4rem)]"
         style={{
           background: "linear-gradient(to bottom, #f7f5f0 0%, #f7f5f0 8%, #e2d8ce 28%, #1a202c 46%, #1a202c 78%, #d8cbbd 92%, #f7f5f0 100%)",
-          paddingTop: "clamp(5rem, 10vw, 8rem)",
-          paddingBottom: "clamp(5rem, 10vw, 8rem)"
+          paddingTop: "clamp(4.5rem, 12vw, 8rem)",
+          paddingBottom: "clamp(4.5rem, 12vw, 8rem)"
         }}
       >
         {/* Subtle background texture */}
@@ -370,13 +386,13 @@ export default function App() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col items-center text-center mb-[clamp(3rem,6vw,5rem)]"
           >
-            <div className="flex items-center gap-4 mb-[clamp(1.75rem,4vw,2rem)]">
-              <div className="h-[1px] w-14 bg-[#d4bca3]"></div>
-              <p className="text-[#d4bca3] text-sm font-semibold tracking-[0.25em] uppercase">Guest Stories</p>
-              <div className="h-[1px] w-14 bg-[#d4bca3]"></div>
+            <div className="flex items-center gap-3 md:gap-4 mb-[clamp(1.75rem,4vw,2rem)]">
+              <div className="h-[1px] w-8 md:w-14 bg-[#d4bca3]"></div>
+              <p className="text-[#d4bca3] text-xs md:text-sm font-semibold tracking-[0.25em] uppercase">Guest Stories</p>
+              <div className="h-[1px] w-8 md:w-14 bg-[#d4bca3]"></div>
             </div>
             <h2 className="font-playfair text-white leading-[1.15] max-w-3xl"
-              style={{ fontSize: "clamp(2.4rem, 5vw, 4rem)" }}>
+              style={{ fontSize: "clamp(2.05rem, 9vw, 4rem)" }}>
               Loved by travellers <span className="italic text-[#d4bca3]">from around the world</span>
             </h2>
           </motion.div>
@@ -407,11 +423,11 @@ export default function App() {
                 viewport={{ once: true }}
                 whileHover={{ y: -10 }}
                 transition={{ duration: 0.8, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative bg-white/[0.035] border border-white/10 hover:border-[#d4bca3]/30 rounded-[1.25rem] p-[clamp(1.5rem,3vw,2.5rem)] backdrop-blur-sm transition-all duration-500 flex flex-col items-center text-center overflow-hidden"
+                className="group relative bg-white/[0.045] border border-white/10 hover:border-[#d4bca3]/30 rounded-[1.5rem] p-[clamp(1.35rem,5vw,2.5rem)] backdrop-blur-sm transition-all duration-500 flex flex-col items-center text-center overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[#d4bca3]/10 via-transparent to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
                 <div className="absolute -top-10 right-8 h-24 w-24 rounded-full bg-[#d4bca3]/10 blur-2xl opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
-                <Quote className="w-8 h-8 text-[#d4bca3]/50 mb-6" strokeWidth={1.5} />
+                <Quote className="w-7 h-7 md:w-8 md:h-8 text-[#d4bca3]/50 mb-5 md:mb-6" strokeWidth={1.5} />
                 <div className="flex items-center justify-center gap-1 mb-5">
                   {[...Array(5)].map((_, j) => (
                     <Star key={j} size={14} className="text-[#d4bca3] fill-[#d4bca3]" />
@@ -434,10 +450,10 @@ export default function App() {
       {/* Our Sanctuaries Section */}
       <section
         id="sanctuaries"
-        className="relative isolate w-full flex flex-col items-center overflow-hidden px-6"
+        className="relative isolate w-full flex flex-col items-center overflow-hidden px-[clamp(1rem,4vw,1.5rem)] md:px-6"
         style={{
           background: "linear-gradient(to bottom, #f7f5f0 0%, #f7f5f0 15%, #e2d8ce 40%, #1a202c 60%, #1a202c 85%, #e2d8ce 95%, #f7f5f0 100%)",
-          paddingTop: "clamp(2rem, 5vw, 4rem)",
+          paddingTop: "clamp(1.5rem, 5vw, 4rem)",
           paddingBottom: "0"
         }}
       >
@@ -453,7 +469,7 @@ export default function App() {
         />
         <div className="relative z-10 w-full max-w-[1440px] mx-auto px-[clamp(1.25rem,6vw,8rem)]">
           {/* Part 1: Header - Full Viewport */}
-          <div className="min-h-[100vh] flex flex-col justify-center py-24">
+          <div className="min-h-[72svh] md:min-h-[100vh] flex flex-col justify-center py-16 md:py-24">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -461,18 +477,18 @@ export default function App() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="relative flex flex-col items-center"
             >
-              <div className="flex items-center justify-center gap-[clamp(0.9rem,3vw,1.25rem)] mb-[clamp(2rem,5vw,4rem)]">
-                <div className="h-[1px] w-[clamp(2.25rem,8vw,6rem)] bg-[#8c6d53]/60" />
+              <div className="flex items-center justify-center gap-[clamp(0.75rem,3vw,1.25rem)] mb-[clamp(2rem,5vw,4rem)]">
+                <div className="h-[1px] w-[clamp(1.75rem,8vw,6rem)] bg-[#8c6d53]/60" />
                 <span className="text-center text-[#8c6d53] font-light lowercase tracking-[clamp(0.25em,1vw,0.55em)]"
                   style={{ fontSize: "clamp(0.85rem, 1.45vw, 1.2rem)" }}>
                   our sanctuaries
                 </span>
-                <div className="h-[1px] w-[clamp(2.25rem,8vw,6rem)] bg-[#8c6d53]/60" />
+                <div className="h-[1px] w-[clamp(1.75rem,8vw,6rem)] bg-[#8c6d53]/60" />
               </div>
 
               <div className="flex justify-center">
-                <div className="inline-grid max-w-full grid-cols-[1fr_auto_1fr] items-center gap-x-[clamp(0.65rem,3vw,3.5rem)] text-[#050505] font-light lowercase leading-[1.35]"
-                  style={{ fontSize: "clamp(2rem, 7vw, 5.7rem)", letterSpacing: "clamp(0.1em, 1.7vw, 0.28em)" }}>
+                <div className="inline-grid max-w-full grid-cols-[1fr_auto_1fr] items-center gap-x-[clamp(0.45rem,3vw,3.5rem)] text-[#050505] font-light lowercase leading-[1.35]"
+                  style={{ fontSize: "clamp(1.75rem, 8vw, 5.7rem)", letterSpacing: "clamp(0.06em, 1.5vw, 0.28em)" }}>
                   <div className="text-right">space</div>
                   <div className="text-[#8c6d53]/60 leading-none tracking-normal">·</div>
                   <div className="text-left">shape</div>
@@ -486,22 +502,22 @@ export default function App() {
           </div>
 
           {/* Part 2: Styles Selection & Villa Cards - Grouped Together */}
-          <div className="min-h-[100vh] flex flex-col justify-evenly py-12">
+          <div className="min-h-0 md:min-h-[100vh] flex flex-col justify-evenly gap-10 py-10 md:py-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-200px" }}
               transition={{ duration: 0.8 }}
-              className="flex items-center justify-end gap-6"
+              className="flex items-center justify-center md:justify-end gap-4 md:gap-6"
             >
-              <span className="text-[#8c6d53] font-light lowercase tracking-[0.45em]"
+              <span className="text-[#8c6d53] font-light lowercase tracking-[0.28em] md:tracking-[0.45em]"
                 style={{ fontSize: "clamp(0.9rem, 1.6vw, 1.4rem)" }}>
                 select your styles
               </span>
-              <div className="h-[1px] w-[clamp(4rem,10vw,7rem)] bg-[#8c6d53]/60" />
+              <div className="h-[1px] w-[clamp(2.5rem,10vw,7rem)] bg-[#8c6d53]/60" />
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-[clamp(2.5rem,6vw,5rem)] items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-[clamp(2rem,6vw,5rem)] items-start">
               {villas.map((villa) => (
                 <motion.div
                   key={villa.id}
@@ -511,8 +527,8 @@ export default function App() {
                   transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
                   className="relative"
                 >
-                  <span className="absolute -top-[clamp(2.4rem,5vw,3.5rem)] left-0 z-20 font-playfair text-[#d4c8a7] leading-none"
-                    style={{ fontSize: "clamp(3.5rem, 8vw, 6rem)" }}>
+                  <span className="absolute -top-[clamp(1.7rem,5vw,3.5rem)] left-3 md:left-0 z-20 font-playfair text-[#d4c8a7] leading-none"
+                    style={{ fontSize: "clamp(3rem, 13vw, 6rem)" }}>
                     {villa.id}
                   </span>
                   <motion.button
@@ -521,7 +537,7 @@ export default function App() {
                     whileHover={{ y: -8 }}
                     whileTap={{ scale: 0.985 }}
                     transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                    className="group relative w-full aspect-[1.45/1] overflow-hidden rounded-[1.35rem] border border-white/10 shadow-xl shadow-[#8c6d53]/10 outline-none transition-shadow duration-700 hover:shadow-2xl hover:shadow-[#8c6d53]/25"
+                    className="group relative w-full aspect-[1.18/1] md:aspect-[1.45/1] overflow-hidden rounded-[1.35rem] border border-white/10 shadow-xl shadow-[#8c6d53]/10 outline-none transition-shadow duration-700 hover:shadow-2xl hover:shadow-[#8c6d53]/25"
                   >
                     <ImageWithFallback
                       src={villa.image}
@@ -532,7 +548,7 @@ export default function App() {
                     <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
                     <div className="absolute inset-y-0 -left-1/2 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-0 transition-all duration-[1200ms] group-hover:left-[120%] group-hover:opacity-100" />
                     <div className="absolute left-5 top-5 h-2 w-2 rounded-full bg-[#d4bca3] shadow-[0_0_24px_rgba(212,188,163,0.9)] opacity-70 transition-opacity duration-500 group-hover:opacity-100" />
-                    <span className="absolute bottom-5 left-1/2 -translate-x-1/2 text-white lowercase tracking-[0.35em] whitespace-nowrap"
+                    <span className="absolute bottom-5 left-1/2 -translate-x-1/2 text-white lowercase tracking-[0.22em] md:tracking-[0.35em] whitespace-nowrap"
                       style={{ fontSize: "clamp(0.8rem, 1.5vw, 1.2rem)" }}>
                       check availability
                     </span>
@@ -560,7 +576,7 @@ export default function App() {
               animate={{ opacity: 1, x: 0, y: 0 }}
               exit={{ opacity: 0, x: 32, y: 32 }}
               transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-              className="max-h-[92vh] w-full overflow-y-auto rounded-t-[2rem] bg-[#f7f5f0] p-[clamp(0.9rem,3vw,1.5rem)] shadow-2xl shadow-[#1a202c]/30 md:h-full md:max-h-none md:w-[min(900px,76vw)] md:rounded-l-[2rem] md:rounded-tr-none"
+              className="max-h-[88svh] w-full overflow-y-auto rounded-t-[1.75rem] bg-[#f7f5f0] p-[clamp(0.65rem,3vw,1.5rem)] shadow-2xl shadow-[#1a202c]/30 md:h-full md:max-h-none md:w-[min(900px,76vw)] md:rounded-l-[2rem] md:rounded-tr-none"
               onClick={(event) => event.stopPropagation()}
             >
               <BookingWidget
@@ -573,13 +589,13 @@ export default function App() {
       </AnimatePresence>
 
       {/* Footer Section */}
-      <footer className="w-full bg-[#f7f5f0] text-[#1a202c]/70 border-t border-[#e2d8ce]/40"
+      <footer className="w-full bg-[#f7f5f0] text-center md:text-left text-[#1a202c]/70 border-t border-[#e2d8ce]/40"
         style={{ padding: "clamp(4rem, 10vw, 8rem) 0 clamp(2.5rem, 5vw, 4rem)" }}>
         <div className="w-full max-w-[1440px] mx-auto px-[clamp(1.5rem,5vw,6rem)]">
           {/* Top Grid: 4 columns */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-[clamp(2.5rem,5vw,4rem)] mb-[clamp(3rem,8vw,5rem)]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-[clamp(2rem,5vw,4rem)] mb-[clamp(3rem,8vw,5rem)]">
             {/* Brand */}
-            <div className="lg:col-span-4 flex flex-col">
+            <div className="lg:col-span-4 flex flex-col items-center md:items-start">
               <h4 className="font-playfair text-[#1a202c] mb-4"
                 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)" }}>Rocking Chair</h4>
               <p className="text-[#1a202c]/60 font-light leading-relaxed mb-8 max-w-xs"
@@ -600,7 +616,7 @@ export default function App() {
             <div className="lg:col-span-2">
               <h5 className="text-[#1a202c] font-semibold tracking-widest uppercase mb-6"
                 style={{ fontSize: "clamp(0.65rem, 1vw, 0.75rem)" }}>Navigate</h5>
-              <ul className="flex flex-col gap-4 font-light">
+              <ul className="flex flex-col gap-3 md:gap-4 font-light">
                 {["Home", "Villas", "Experiences", "Gallery", "Contact"].map((l) => (
                   <li key={l}>
                     <a href="#" className="text-[#1a202c]/50 hover:text-[#8c6d53] transition-colors"
@@ -615,17 +631,17 @@ export default function App() {
               <h5 className="text-[#1a202c] font-semibold tracking-widest uppercase mb-6"
                 style={{ fontSize: "clamp(0.65rem, 1vw, 0.75rem)" }}>Contact</h5>
               <ul className="flex flex-col gap-5 font-light">
-                <li className="flex items-start gap-3 text-[#1a202c]/50"
+                <li className="flex items-start justify-center md:justify-start gap-3 text-[#1a202c]/50"
                   style={{ fontSize: "clamp(0.8rem, 1.2vw, 0.9rem)" }}>
                   <MapPin size={18} className="shrink-0 mt-0.5 text-[#8c6d53]" />
-                  <span>Chaweng Noi, Koh Samui, Surat Thani 84320, Thailand</span>
+                  <span className="max-w-[16rem] md:max-w-none">Chaweng Noi, Koh Samui, Surat Thani 84320, Thailand</span>
                 </li>
-                <li className="flex items-center gap-3 text-[#1a202c]/50 hover:text-[#8c6d53] transition-colors"
+                <li className="flex items-center justify-center md:justify-start gap-3 text-[#1a202c]/50 hover:text-[#8c6d53] transition-colors"
                   style={{ fontSize: "clamp(0.8rem, 1.2vw, 0.9rem)" }}>
                   <Phone size={18} className="shrink-0 text-[#8c6d53]" />
                   <a href="tel:+66123456789">+66 (0)12 345 6789</a>
                 </li>
-                <li className="flex items-center gap-3 text-[#1a202c]/50 hover:text-[#8c6d53] transition-colors"
+                <li className="flex items-center justify-center md:justify-start gap-3 text-[#1a202c]/50 hover:text-[#8c6d53] transition-colors"
                   style={{ fontSize: "clamp(0.8rem, 1.2vw, 0.9rem)" }}>
                   <Mail size={18} className="shrink-0 text-[#8c6d53]" />
                   <a href="mailto:hello@rockingchair.com">hello@rockingchair.com</a>
@@ -679,8 +695,8 @@ export default function App() {
       {/* Navigation Bar (Fixed & Responsive to Scroll) */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] flex justify-center ${isScrolled
-          ? "py-3 bg-[#1a202c]/95 backdrop-blur-md shadow-lg"
-          : "py-6 bg-gradient-to-b from-[#1a202c]/70 to-transparent"
+          ? "py-2.5 md:py-3 bg-[#1a202c]/95 backdrop-blur-md shadow-lg"
+          : "py-4 md:py-6 bg-gradient-to-b from-[#1a202c]/70 to-transparent"
           }`}
       >
         <div className="w-[90%] lg:w-[85%] max-w-[1440px] flex items-center relative justify-between">
@@ -692,8 +708,8 @@ export default function App() {
             <div
               className="relative flex items-center justify-center transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
               style={{
-                width: isScrolled ? 'clamp(64px, 10vw, 120px)' : 'clamp(96px, 15vw, 200px)',
-                height: isScrolled ? 'clamp(64px, 10vw, 120px)' : 'clamp(96px, 15vw, 200px)'
+                width: isScrolled ? 'clamp(56px, 10vw, 120px)' : 'clamp(76px, 15vw, 200px)',
+                height: isScrolled ? 'clamp(56px, 10vw, 120px)' : 'clamp(76px, 15vw, 200px)'
               }}
             >
               <ImageWithFallback
