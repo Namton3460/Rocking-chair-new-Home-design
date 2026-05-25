@@ -257,7 +257,7 @@ export default function App() {
         <div
           className="flex flex-col gap-8 md:gap-12 text-center z-10"
           style={{
-            maxWidth: "clamp(300px, 88vw, 800px)"
+            maxWidth: "clamp(300px, 88vw, 1200px)"
           }}
         >
           <span
